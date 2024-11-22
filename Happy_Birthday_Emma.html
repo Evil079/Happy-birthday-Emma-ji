@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Emma!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ff99cc, #ffccff);
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+        h1 {
+            font-size: 3em;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.5em;
+            color: white;
+            margin: 20px 0;
+            text-align: center;
+            animation: fadeIn 4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .balloons {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(circle, #ff6666, #ff0000);
+            border-radius: 50%;
+            animation: floatUp 5s infinite;
+            transform-origin: bottom;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-120vh);
+                opacity: 0;
+            }
+        }
+        .balloons:nth-child(odd) {
+            background: radial-gradient(circle, #66ccff, #0099ff);
+            animation-duration: 6s;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            animation: fadeIn 6s ease-in-out;
+        }
+        button:hover {
+            background-color: #f0e68c;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Happy Birthday Emma!</h1>
+        <p>May your day be filled with joy,<br> and your heart overflow with happiness.<br> Wishing you all the best today and always!</p>
+        <button onclick="celebrate()">Click to Celebrate!</button>
+    </div>
+
+    <!-- Balloons Animation -->
+    <div class="balloons" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="balloons" style="left: 40%; animation-delay: 1s;"></div>
+    <div class="balloons" style="left: 60%; animation-delay: 2s;"></div>
+    <div class="balloons" style="left: 80%; animation-delay: 3s;"></div>
+
+    <audio id="birthdayMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function celebrate() {
+            document.getElementById('birthdayMusic').play();
+            alert("Happy Birthday Emma! 🎉🎂");
+        }
+    </script>
+</body>
+</html>
